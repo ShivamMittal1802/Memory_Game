@@ -109,6 +109,14 @@ const MemoryGame = () => {
     }
   };
 
+  const handleResetGame =() =>{
+    setDisabled(false);
+    setFlipped([]);
+    setMatched([]);
+    setOpen({});
+    setWon("");
+  }
+
   return (
     <div>
       <div className=" flex justify-center text-center">
@@ -148,6 +156,9 @@ const MemoryGame = () => {
             </div>
           );
         })}
+      </div>
+      <div className="text-center bg-amber-600 mt-4 rounded-lg">
+        <button onClick={handleResetGame} >Reset Game</button>
       </div>
       {won && <div className="text-center font-bold text-red-700 text-3xl mb-4"> Yeah! You Won </div>}
     </div>
